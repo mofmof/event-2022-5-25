@@ -20,6 +20,9 @@ class Enemy
     # 桁が異なるが、数字が合っていると1BITE
     # @hand[0] predict[0]: EATは判定できるけどBITEが判定しづらい…
     # BITE判定してから、位置が合っているものをEAT判定に変える
+    included = @hand.filter do |number|
+      predict.include?(number)
+    end
   end
 end
 
@@ -30,6 +33,8 @@ class HandGenerator
   end
 end
 
-call_input = gets.chomp.chars.map(&:to_i)
-p call_input
+enemy = Enemy.new
+p enemy.view_hand
 
+call_input = gets.chomp.chars.map(&:to_i)
+p enemy.judge(call_input)
