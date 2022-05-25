@@ -26,7 +26,6 @@ class HandGenerator
   end
 end
 
-e = Enemy.new
-puts e.view_hand
-puts e.view_hand
+call_input = gets.chomp.chars.map(&:to_i)
+p call_input
 
