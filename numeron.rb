@@ -7,7 +7,7 @@
 
 class Enemy
   def initialize
-    
+
   end
 end
 
@@ -17,7 +17,7 @@ class HandGenerator
     # 数字はみっつ 配列？
     # 0~9の数字がある
     # 重複なし
-    (0..9).to_a
+    (0..9).to_a.shuffle.slice(0..2)
   end
 end
 
