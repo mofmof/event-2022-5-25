@@ -23,6 +23,12 @@ class Enemy
     included = @hand.filter do |number|
       predict.include?(number)
     end
+    bite_count = included.count
+    eat_count = 0
+    3.times do |number|
+      eat_count += 1  if @hand[number] == predict[number]
+    end
+    [eat_count, bite_count]
   end
 end
 
