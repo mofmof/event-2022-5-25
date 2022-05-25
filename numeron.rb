@@ -6,8 +6,13 @@
 # - ジャッジ回数をカウントする
 
 class Enemy
+  attr_accessor :hand
   def initialize
+    @hand = HandGenerator.generate
+  end
 
+  def view_hand
+    @hand
   end
 end
 
@@ -21,4 +26,7 @@ class HandGenerator
   end
 end
 
-puts HandGenerator.generate
+e = Enemy.new
+puts e.view_hand
+puts e.view_hand
+
